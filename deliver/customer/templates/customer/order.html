@@ -69,6 +69,27 @@
                     {% endfor %}
                 </div>
 
+                <div class="pt-5">
+                    {% for icecream in icecreams %}
+                    <div class="row mt-4">
+                        <div class="col-md-2 col-sm-12">
+                            <img class="rounded" src="{{ icecream.image.url }}" width="150" height="100"/>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" name="items[]" class="form-check-input" value="{{ icecream.pk }}">
+                                    <label class="form-check-label">{{ icecream.name }}</label>
+                                </div>
+                                <p class="font-weight-bold pl-5">{{ icecream.price }}</p>
+                            </div>
+                            <p>{{ icecream.description }}</p>
+                        </div>
+                    </div>
+                    <hr />
+                    {% endfor %}
+                </div>
+
                 <div class="form-group pt-3">
                     <label for="name">Full Name</label>
                     <input required class="form-control" type="text" placeholder="Your Name" name="name" />
